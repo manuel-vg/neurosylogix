@@ -3,7 +3,34 @@ This repository contains the code and experimental resources for our study of lo
 Using an extended syllogistic logic benchmark, we investigate two aspects of reasoning—compositionality and recursiveness—and show that, overall, LLMs perform reasonably well on recursive reasoning, 
 they struggle with compositional generalization. We further find that generalization is structure-dependent, with performance varying across different syllogistic structures. Finally, we propose a hybrid architecture that combines the efficiency of neural computation with the reliability of symbolic reasoning.
 
-# Citation
+## Installation
+
+- Download the GitHub repository.
+- Install the environment using **environment.yml**.
+
+## Dataset Generation
+
+From the repository root, execute:
+
+```bash
+bash scripts/data_generation.sh T5|GPT pbc|ps ove|com|rec
+```
+
+where:
+
+- `T5|GPT` specifies the model.
+- `pbc|ps` specifies the task.
+- `ove|com|rec` specifies the experiment.
+
+### Example
+
+```bash
+bash scripts/data_generation.sh T5 ps ove
+```
+
+This generates the dataset for training and evaluating the T5 model on the premise selection (`ps`) task using the baseline (`ove`) experiment, where the model is trained and evaluated on all lengths.
+
+## Citation
 
 If you use this code or the resources in your research, please cite our paper:
 
