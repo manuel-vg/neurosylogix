@@ -1,0 +1,13 @@
+name: hybrid-models-env
+
+dependencies:
+  - python=3.10
+  - numpy=1.26.4
+  - pandas=2.2.2
+  - matplotlib=3.8.4
+  - pip
+  - pip:
+      - tensorflow==2.15.1
+      - tf-keras==2.15.0
+      - transformers==4.41.2
+      - jsonlines==4.0.0
