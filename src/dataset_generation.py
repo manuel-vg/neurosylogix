@@ -3,6 +3,8 @@
 from encoding import DatasetBuilder
 from itertools import product
 
+import sys
+
 # FUNCTIONS
 # my range
 def r(s,e):
@@ -52,7 +54,7 @@ lengths = {'pbc': {'1':r(1,12), '3':r(0,20), '4':r(1,13), '5':r(1,20), '7':r(0,1
            'ps': {'1':r(0,12), '2':r(1,10), '3':r(0,20), '4':r(1,13), '5':r(1,20), '6':r(0,17), '7':r(0,15)}}
 
 # MAIN FUNCTION
-def generate(model=['T5', 'GPT'], task=['pbc', 'ps'], exp=['ove', 'com', 'rec'], data_split=['train', 'test']):
+def generate(save_path, model=['T5', 'GPT'], task=['pbc', 'ps'], exp=['ove', 'com', 'rec'], data_split=['train', 'test']):
     for m,t,e,d in product(model, task, exp, data_split):
         # set default test data split (according to task)
         if d == 'test' and e == 'rec':
@@ -80,7 +82,7 @@ def generate(model=['T5', 'GPT'], task=['pbc', 'ps'], exp=['ove', 'com', 'rec'],
         for name,args in P.items():
             data = DatasetBuilder(name=name, 
                                   source=f"structures/{d}", 
-                                  save_path=f"datasets/{m}/{t}/{e}",
+                                  save_path=save_path,
                                   substitutions=f"substitutions/substitutions_{d}.json", 
                                   permutations=permutations, 
                                   task=t, 
@@ -88,6 +90,9 @@ def generate(model=['T5', 'GPT'], task=['pbc', 'ps'], exp=['ove', 'com', 'rec'],
             data.build(**args)
 
 if __name__ == "__main__":
-    generate()
+    save_path = sys.argv[1]
+    model = sys.argv[2]
+    task = sys.argv[3]
+    exp = sys.argv[4]
 
-
+    generate(save_path=save_path, model=[model], task=[task], exp=[exp])
