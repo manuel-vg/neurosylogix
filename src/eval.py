@@ -1,4 +1,4 @@
-from utils import save_json
+import utils
 
 def tensor_to_list(tensor): 
     values = tensor.numpy()
@@ -53,4 +53,4 @@ def eval_model(model, tokenizer, test_dataset, output_file):
         for pred, label, ds_id, h, type, length in zip(all_predictions, all_labels, all_ds_ids, all_hypotheses, all_types, all_lengths)
     ]
 
-    save_json(json_path=output_file, data=results)
+    utils.save_json(json_path=output_file, data=results)
