@@ -1,9 +1,9 @@
 import tensorflow as tf
-from utils import open_json
+import utils
 
 class Dataset:
     def __init__(self, json_path, tokenizer):
-        self.data = open_json(json_path)
+        self.data = utils.open_json(json_path)
         self.tokenizer = tokenizer
 
     def __len__(self):
