@@ -29,6 +29,32 @@ bash scripts/data_generation.sh T5 ps ove
 
 This generates the dataset for training and evaluating the T5 model on the premise selection (`ps`) task using the baseline (`ove`) experiment, where the model is trained and evaluated on all lengths.
 
+## Training and Evaluation
+
+The experiment script is available for the T5 model. 
+GPT experiments are run using a separate API. See the [GPT-4o mini API documentation](https://developers.openai.com/api/docs/models/gpt-4o-mini) for instructions.
+
+From the repository root, execute:
+
+```bash
+bash scripts/run_experiment.sh train|eval pbc|ps ove|com|rec 1|2|3
+```
+
+where:
+
+- `train|eval` specifies the mode, either training or evaluation.
+- `pbc|ps` specifies the task.
+- `ove|com|rec` specifies the experiment.
+- `1|2|3` specifies the run number.
+
+### Example
+
+```bash
+bash scripts/run_experiment.sh train ps ove 1
+```
+
+This starts the first training run for the T5 model on the premise selection (`ps`) task using the baseline (`ove`) experiment.
+
 ## Citation
 
 If you use this code or the resources in your research, please cite our paper:
