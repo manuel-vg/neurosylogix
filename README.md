@@ -1,7 +1,6 @@
 # Hybrid Models for Natural Language Reasoning: The Case of Syllogistic Logic
 This repository contains the code and experimental resources for our study of logical generalization in large language models.
-Using an extended syllogistic logic benchmark, we investigate two aspects of reasoning—compositionality and recursiveness—and show that, overall, LLMs perform reasonably well on recursive reasoning, 
-they struggle with compositional generalization. We further find that generalization is structure-dependent, with performance varying across different syllogistic structures. Finally, we propose a hybrid architecture that combines the efficiency of neural computation with the reliability of symbolic reasoning.
+Using an extended syllogistic logic benchmark, we investigate two aspects of reasoning—compositionality and recursiveness—and show that, overall, LLMs perform reasonably well on recursive reasoning but struggle with compositional generalization. We further find that generalization is structure-dependent, with performance varying across different syllogistic structures. Finally, we propose a hybrid architecture that combines the efficiency of neural computation with the reliability of symbolic reasoning.
 
 ## Installation
 
