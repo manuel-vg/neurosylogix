@@ -55,6 +55,17 @@ bash scripts/run_experiment.sh train ps ove 1
 
 This starts the first training run for the T5 model on the premise selection (`ps`) task using the baseline (`ove`) experiment.
 
+## Hybrid Models Experiment
+
+The `hybrid_models` directory contains the complete implementation and experimental setup for comparing the number of reasoning steps required by hybrid and symbolic reasoners.
+To reproduce the experiments, navigate to the `hybrid_models` directory and execute:
+
+```bash
+bash hybrid_models.sh
+```
+
+The script runs the complete experimental pipeline, including proof construction and result generation.
+
 ## Citation
 
 If you use this code or the resources in your research, please cite our paper:
